@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#071A33" />
+  <title>AD Craft — AI Lead Automation for Real Estate | Turn Leads Into Site Visits</title>
+  <meta name="description" content="AD Craft responds to real-estate leads in seconds, answers property questions using brochures, qualifies buyers, and schedules site visits automatically — 24/7." />
+  
+  <!-- Fonts: Inter & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#071A33',
+              'navy-deep': '#040F1F',
+              'navy-surface': '#0B2345',
+              blue: '#2563EB',
+              'blue-hover': '#1D4ED8',
+              'blue-light': '#3B82F6',
+              cyan: '#06B6D4',
+              'cyan-hover': '#0891B2',
+              slate: '#0F172A',
+              muted: '#64748B',
+              bg: '#F8FAFC',
+              emerald: '#22C55E',
+              whatsapp: '#25D366',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            heading: ['Poppins', 'Inter', 'sans-serif'],
+          },
+          boxShadow: {
+            'glow-cyan': '0 0 25px -4px rgba(6, 182, 212, 0.35)',
+            'glow-blue': '0 0 25px -4px rgba(37, 99, 235, 0.35)',
+            'saas-card': '0 4px 20px -2px rgba(7, 26, 51, 0.06), 0 2px 6px -1px rgba(7, 26, 51, 0.04)',
+            'saas-card-hover': '0 16px 36px -4px rgba(7, 26, 51, 0.12), 0 4px 12px -2px rgba(7, 26, 51, 0.06)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #071A33; }
+    ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #334155; }
+    
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.8; }
+    }
+    .pulse-glow { animation: pulseGlow 3s infinite; }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-[#0F172A] font-sans antialiased selection:bg-brand-blue/15 selection:text-brand-blue">
+
+  <!-- STICKY NAVBAR -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#071A33]/85 backdrop-blur-md border-b border-white/10 py-3.5 shadow-lg shadow-[#071A33]/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        
+        <!-- Logo -->
+        <a href="#top" class="flex items-center space-x-2.5 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-blue to-brand-cyan p-0.5 shadow-md shadow-brand-blue/30 group-hover:scale-105 transition-transform">
+            <div class="w-full h-full bg-[#071A33] rounded-[10px] flex items-center justify-center">
+              <svg class="w-5 h-5 text-brand-cyan" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="4" y="2" width="16" height="20" rx="2" stroke-width="2"/>
+                <path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/>
+              </svg>
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <div class="flex items-center space-x-1.5">
+              <span class="text-xl font-heading font-extrabold text-white tracking-tight">
+                AD<span class="text-brand-cyan">Craft</span>
+              </span>
+              <span class="text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-brand-blue/30 text-cyan-300 border border-brand-cyan/20">
+                AI
+              </span>
+            </div>
+            <span class="text-[10px] text-slate-400 font-medium tracking-wide">
+              PropTech SaaS
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+          <a href="#product" class="px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Product</a>
+          <a href="#how-it-works" class="px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">How It Works</a>
+          <a href="#features" class="px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Features</a>
+          <a href="#pricing" class="px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Pricing</a>
+          <a href="#use-cases" class="px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">Use Cases</a>
+        </nav>
+
+        <!-- Right CTAs -->
+        <div class="hidden md:flex items-center space-x-3">
+          <button onclick="openModal('login-modal')" class="px-4 py-2 text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">
+            Login
+          </button>
+          <button onclick="openModal('demo-modal')" class="relative inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-600 hover:to-brand-blue rounded-lg shadow-md shadow-brand-blue/25 hover:shadow-brand-blue/40 transition-all group">
+            <span>Book a Demo</span>
+            <svg class="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="flex md:hidden items-center space-x-2">
+          <button onclick="openModal('demo-modal')" class="px-3 py-1.5 text-xs font-semibold text-white bg-brand-blue rounded-md">
+            Book Demo
+          </button>
+          <button onclick="toggleMobileMenu()" class="p-2 text-slate-300 hover:text-white rounded-lg hover:bg-white/5" aria-label="Toggle menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#071A33] border-b border-white/10 px-4 pt-3 pb-6 space-y-3">
+      <div class="space-y-1">
+        <a href="#product" onclick="toggleMobileMenu()" class="block px-3 py-2 text-sm font-medium text-slate-200 hover:bg-white/5 rounded-lg">Product</a>
+        <a href="#how-it-works" onclick="toggleMobileMenu()" class="block px-3 py-2 text-sm font-medium text-slate-200 hover:bg-white/5 rounded-lg">How It Works</a>
+        <a href="#features" onclick="toggleMobileMenu()" class="block px-3 py-2 text-sm font-medium text-slate-200 hover:bg-white/5 rounded-lg">Features</a>
+        <a href="#pricing" onclick="toggleMobileMenu()" class="block px-3 py-2 text-sm font-medium text-slate-200 hover:bg-white/5 rounded-lg">Pricing</a>
+        <a href="#use-cases" onclick="toggleMobileMenu()" class="block px-3 py-2 text-sm font-medium text-slate-200 hover:bg-white/5 rounded-lg">Use Cases</a>
+      </div>
+      <div class="pt-3 border-t border-white/10 space-y-2">
+        <button onclick="openModal('login-modal'); toggleMobileMenu()" class="w-full text-center py-2 text-sm font-semibold text-slate-300 bg-white/5 rounded-lg">Login</button>
+        <button onclick="openModal('beta-modal'); toggleMobileMenu()" class="w-full text-center py-2 text-sm font-semibold text-[#071A33] bg-brand-cyan rounded-lg">Start Free Beta</button>
+        <button onclick="openModal('demo-modal'); toggleMobileMenu()" class="w-full text-center py-2 text-sm font-semibold text-white bg-brand-blue rounded-lg">Book a Demo</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="top" class="relative pt-32 pb-20 lg:pt-36 lg:pb-28 overflow-hidden bg-gradient-to-b from-[#071A33] via-[#082142] to-[#0B2345] text-white">
+    <!-- Glow effects -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-br from-brand-blue/20 via-brand-cyan/15 to-transparent blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Headline & Badge -->
+      <div class="text-center max-w-4xl mx-auto mb-14 lg:mb-16">
+        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-brand-blue/20 border border-brand-cyan/30 text-cyan-300 text-xs sm:text-sm font-semibold mb-6 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-brand-cyan animate-ping"></span>
+          <span>AI-Powered Real Estate Lead Automation</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight text-white mb-6 leading-[1.15]">
+          Turn Every Property Lead Into a <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-blue-300 to-white">Site Visit.</span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed max-w-3xl mx-auto mb-8">
+          <strong class="text-white font-semibold">AD Craft</strong> responds to your real-estate leads in seconds, answers property questions, qualifies buyers, and books site visits automatically — 24/7.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+          <button onclick="openModal('beta-modal')" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-[#071A33] bg-gradient-to-r from-brand-cyan to-cyan-400 hover:from-cyan-300 hover:to-cyan-400 rounded-xl shadow-lg shadow-brand-cyan/25 hover:-translate-y-0.5 transition-all">
+            <span>Start Free Beta</span>
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </button>
+
+          <a href="#live-demo" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 text-base font-semibold text-white bg-white/10 hover:bg-white/15 border border-white/20 rounded-xl backdrop-blur-sm transition-all">
+            <svg class="w-4 h-4 mr-2.5 text-brand-cyan fill-brand-cyan" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span>Watch Live Demo</span>
+          </a>
+        </div>
+
+        <!-- Trust Statement -->
+        <div class="flex items-center justify-center space-x-2 text-xs sm:text-sm text-slate-400">
+          <svg class="w-4 h-4 text-brand-cyan shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Built for brokers, builders, developers & real-estate agencies.</span>
+        </div>
+      </div>
+
+      <!-- HERO VISUAL: 3-PANEL INTERACTIVE DISPLAY -->
+      <div class="relative mx-auto max-w-6xl">
+        <div class="rounded-2xl lg:rounded-3xl bg-[#071A33]/90 border border-white/15 shadow-2xl p-4 sm:p-6 backdrop-blur-xl">
+          
+          <!-- Browser Top Bar -->
+          <div class="flex items-center justify-between pb-3 mb-4 border-b border-white/10 text-xs text-slate-400">
+            <div class="flex items-center space-x-2">
+              <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+              <span class="ml-2 font-mono text-[11px] text-slate-400 bg-white/5 px-2.5 py-0.5 rounded border border-white/5">adcraft.ai/stream</span>
+            </div>
+            <div class="flex items-center space-x-2 text-emerald-400 font-semibold text-[11px]">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span>AI Lead Loss Protection Active (<span id="latency-counter">2.1</span>s)</span>
+            </div>
+          </div>
+
+          <!-- 3 Columns -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+            
+            <!-- LEFT: New Lead -->
+            <div class="lg:col-span-3 space-y-3">
+              <div class="p-4 rounded-xl bg-white/[0.04] border border-white/10">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-xs font-semibold uppercase text-brand-cyan">Step 01 • Inbound</span>
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-pink-500/20 text-pink-300 border border-pink-500/30">Instagram Ads</span>
+                </div>
+                <h3 class="text-sm font-semibold text-white mb-2">New Lead Received</h3>
+                
+                <div class="p-3.5 rounded-lg bg-[#040F1F] border border-white/10 space-y-2">
+                  <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-blue to-purple-600 flex items-center justify-center font-bold text-white text-sm">
+                      RV
+                    </div>
+                    <div>
+                      <div class="text-sm font-bold text-white">Rahul Verma</div>
+                      <div class="text-xs text-slate-400">Just now • 11:28 AM</div>
+                    </div>
+                  </div>
+                  <div class="pt-2 border-t border-white/10 space-y-1 text-xs text-slate-300">
+                    <div class="flex justify-between">
+                      <span class="text-slate-400">Property:</span>
+                      <span class="font-bold text-white">3 BHK Apartment</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-slate-400">Source:</span>
+                      <span class="text-cyan-300">Instagram Ad</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-slate-400">Response:</span>
+                      <span class="text-emerald-400 font-mono font-bold">2.4 seconds</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-3 p-2.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-[11px] text-blue-200">
+                  ⚡ Auto-engaged on WhatsApp. No sales rep delay.
+                </div>
+              </div>
+            </div>
+
+            <!-- CENTER: AI Conversation -->
+            <div class="lg:col-span-5">
+              <div class="rounded-xl bg-[#040F1F] border border-white/10 p-4 h-[380px] flex flex-col justify-between">
+                
+                <div class="flex items-center justify-between pb-2 mb-2 border-b border-white/10">
+                  <div class="flex items-center space-x-2">
+                    <div class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold">
+                      AI
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold text-white">AD Craft Agent</div>
+                      <div class="text-[10px] text-emerald-400">Online • Brochure AI</div>
+                    </div>
+                  </div>
+                  <span class="text-[10px] text-slate-400 font-mono">WhatsApp Stream</span>
+                </div>
+
+                <!-- Chat Stream -->
+                <div id="hero-chat-container" class="flex-1 overflow-y-auto space-y-2.5 text-xs pr-1">
+                  <!-- Message 1 -->
+                  <div class="flex flex-col items-end">
+                    <div class="bg-brand-blue text-white rounded-2xl rounded-tr-none px-3.5 py-2 max-w-[85%]">
+                      Hi, I saw your 3 BHK ad. What's the price?
+                    </div>
+                    <span class="text-[9px] text-slate-500 mt-0.5">11:28 AM</span>
+                  </div>
+
+                  <!-- Message 2 -->
+                  <div class="flex flex-col items-start">
+                    <div class="bg-white/10 text-slate-100 border border-white/10 rounded-2xl rounded-tl-none px-3.5 py-2 max-w-[85%]">
+                      Hi Rahul! 👋 Thanks for your interest in our 3 BHK apartments. The 3 BHK starts from ₹62 Lakhs. Would you like details about price, location, or amenities?
+                    </div>
+                    <span class="text-[9px] text-slate-500 mt-0.5">11:28 AM</span>
+                  </div>
+
+                  <!-- Message 3 -->
+                  <div class="flex flex-col items-end">
+                    <div class="bg-brand-blue text-white rounded-2xl rounded-tr-none px-3.5 py-2 max-w-[85%]">
+                      Price and location. Looking for personal use around ₹65L in Bilaspur.
+                    </div>
+                    <span class="text-[9px] text-slate-500 mt-0.5">11:29 AM</span>
+                  </div>
+
+                  <!-- Message 4 -->
+                  <div class="flex flex-col items-start">
+                    <div class="bg-white/10 text-slate-100 border border-white/10 rounded-2xl rounded-tl-none px-3.5 py-2 max-w-[85%]">
+                      Perfect fit! We have corner 3 BHK units at Bilaspur matching ₹65L. Would you like to schedule an on-site visit this Saturday at 11:30 AM?
+                    </div>
+                    <span class="text-[9px] text-slate-500 mt-0.5">11:29 AM</span>
+                  </div>
+                </div>
+
+                <!-- Input bar -->
+                <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
+                  <span>AI autonomously managing real estate dialogue...</span>
+                  <span class="text-emerald-400 font-semibold">Active</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT: Qualified Lead & Visit Booked -->
+            <div class="lg:col-span-4 space-y-3">
+              <div class="p-4 rounded-xl bg-white/[0.04] border border-white/10">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-xs font-semibold uppercase text-emerald-400">Step 02 & 03 • Outcome</span>
+                  <span class="text-[10px] font-extrabold px-2 py-0.5 rounded bg-orange-500/20 text-orange-400 border border-orange-500/30">
+                    🔥 HOT LEAD (92/100)
+                  </span>
+                </div>
+
+                <h3 class="text-sm font-semibold text-white mb-2">Qualified Buyer Card</h3>
+
+                <div class="p-3 rounded-lg bg-[#040F1F] border border-white/10 space-y-1.5 text-xs">
+                  <div class="flex justify-between">
+                    <span class="text-slate-400">Budget:</span>
+                    <span class="font-bold text-emerald-400">₹65L</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-slate-400">Property:</span>
+                    <span class="font-medium text-white">3 BHK</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-slate-400">Location:</span>
+                    <span class="font-medium text-white">Bilaspur</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-slate-400">Timeline:</span>
+                    <span class="font-medium text-cyan-300">30 days</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-slate-400">Status:</span>
+                    <span class="font-bold text-orange-400">🔥 Hot Lead</span>
+                  </div>
+                </div>
+
+                <!-- Site Visit Booked -->
+                <div class="mt-3 p-3.5 rounded-xl bg-gradient-to-r from-emerald-950/60 to-[#040F1F] border border-emerald-500/30">
+                  <div class="flex items-center space-x-2 text-emerald-400 font-bold text-xs mb-1">
+                    <svg class="w-4 h-4 text-emerald-400 fill-emerald-400" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <span>Site Visit Booked ✓</span>
+                  </div>
+                  <div class="flex justify-between text-xs text-white font-semibold pt-1">
+                    <span>Saturday</span>
+                    <span class="text-brand-cyan">11:30 AM</span>
+                  </div>
+                  <div class="text-[10px] text-slate-400 mt-1">Google Calendar Synced • Sales Team Notified</div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Stat Strip -->
+          <div class="mt-4 pt-3 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-3 text-center text-xs">
+            <div><span class="font-heading font-bold text-white text-base">4 Seconds</span><span class="block text-slate-400 text-[11px]">Speed to Lead</span></div>
+            <div><span class="font-heading font-bold text-emerald-400 text-base">2.8x</span><span class="block text-slate-400 text-[11px]">Site Visit Lift</span></div>
+            <div><span class="font-heading font-bold text-brand-cyan text-base">24 / 7</span><span class="block text-slate-400 text-[11px]">Automated Responses</span></div>
+            <div><span class="font-heading font-bold text-purple-300 text-base">0</span><span class="block text-slate-400 text-[11px]">Unanswered Night Leads</span></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PAIN POINT SECTION -->
+  <section id="product" class="py-20 lg:py-28 bg-[#F8FAFC]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-red-500/10 text-red-600 text-xs font-bold uppercase tracking-wider mb-4 border border-red-500/20">
+          The Real Estate Lead Leakage Problem
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#0F172A] tracking-tight mb-4">
+          You're paying for leads. <span class="text-red-600">Why are you losing them?</span>
+        </h2>
+        <p class="text-base sm:text-lg text-slate-600">
+          Most real estate businesses pour money into Meta and Google ads, but let 65%+ of potential buyers slip through the cracks due to slow or missed responses.
+        </p>
+      </div>
+
+      <!-- 4 Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+        
+        <!-- Card 1 -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-saas-card hover:shadow-saas-card-hover transition-all">
+          <div class="w-12 h-12 rounded-xl bg-red-50 text-red-600 flex items-center justify-center font-bold text-lg mb-4">
+            ⏱️
+          </div>
+          <h3 class="text-lg font-heading font-bold text-[#0F172A] mb-2">Slow Response</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Most teams cannot respond to every lead instantly. Leads go cold in 5 minutes while buyers scroll to competitor projects.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-saas-card hover:shadow-saas-card-hover transition-all">
+          <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-lg mb-4">
+            🌙
+          </div>
+          <h3 class="text-lg font-heading font-bold text-[#0F172A] mb-2">Missed After-Hours Leads</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Potential buyers message late at night (9 PM - 7 AM) when your sales team is unavailable and asleep.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-saas-card hover:shadow-saas-card-hover transition-all">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center font-bold text-lg mb-4">
+            📄
+          </div>
+          <h3 class="text-lg font-heading font-bold text-[#0F172A] mb-2">Repetitive Questions</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Salespeople waste hours answering the same property questions regarding pricing, carpet area, and floor plans.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-saas-card hover:shadow-saas-card-hover transition-all">
+          <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center font-bold text-lg mb-4">
+            🔄
+          </div>
+          <h3 class="text-lg font-heading font-bold text-[#0F172A] mb-2">Poor Follow-Up</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Interested prospects disappear because nobody follows up consistently across 3, 7, and 14-day intervals.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Transition Statement -->
+      <div class="max-w-4xl mx-auto rounded-2xl bg-gradient-to-r from-[#071A33] via-[#0B2345] to-[#071A33] text-white p-7 shadow-xl text-center">
+        <span class="text-xs font-semibold uppercase tracking-wider text-brand-cyan mb-2 inline-block">The Solution</span>
+        <h3 class="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-white mb-2">
+          AD Craft fixes the gap between <span class="text-cyan-300">"Lead Generated"</span> and <span class="text-emerald-400">"Site Visit Booked."</span>
+        </h3>
+        <p class="text-sm text-slate-300">Turn ad spend into high-conversion physical showroom walkthroughs.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SOLUTION SECTION -->
+  <section id="solution" class="py-20 lg:py-28 bg-[#071A33] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-brand-blue/20 border border-brand-cyan/30 text-cyan-300 text-xs font-semibold mb-4">
+          24/7 Real Estate Sales Assistant
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white tracking-tight mb-4">
+          Your AI sales agent <span class="text-brand-cyan">never sleeps.</span>
+        </h2>
+        <p class="text-base sm:text-lg text-slate-300">
+          AD Craft acts as a 24/7 AI sales assistant between your advertising campaigns and your sales team.
+        </p>
+      </div>
+
+      <!-- Workflow Diagram with Animated Pulse Lines -->
+      <div class="p-6 sm:p-8 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-xl mb-12">
+        <div class="text-xs font-mono text-brand-cyan uppercase tracking-wider mb-6">Autonomous Workflow Chain:</div>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 text-center">
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+            <span class="text-[10px] font-mono text-cyan-300">01</span>
+            <div class="font-bold text-white text-sm">Ad</div>
+            <div class="text-[10px] text-slate-400">Meta/Google</div>
+          </div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+            <span class="text-[10px] font-mono text-cyan-300">02</span>
+            <div class="font-bold text-white text-sm">Lead</div>
+            <div class="text-[10px] text-slate-400">2s Capture</div>
+          </div>
+          <div class="p-3 rounded-xl bg-brand-blue/30 border border-brand-cyan text-white">
+            <span class="text-[10px] font-mono text-cyan-300">03</span>
+            <div class="font-bold text-white text-sm">AI</div>
+            <div class="text-[10px] text-cyan-200">WhatsApp</div>
+          </div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+            <span class="text-[10px] font-mono text-cyan-300">04</span>
+            <div class="font-bold text-white text-sm">Qualification</div>
+            <div class="text-[10px] text-slate-400">Budget & Unit</div>
+          </div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+            <span class="text-[10px] font-mono text-cyan-300">05</span>
+            <div class="font-bold text-white text-sm">Follow-Up</div>
+            <div class="text-[10px] text-slate-400">Drip Cadence</div>
+          </div>
+          <div class="p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300">
+            <span class="text-[10px] font-mono text-emerald-400">06</span>
+            <div class="font-bold text-emerald-300 text-sm">Site Visit</div>
+            <div class="text-[10px] text-emerald-200">Calendar Sync</div>
+          </div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+            <span class="text-[10px] font-mono text-cyan-300">07</span>
+            <div class="font-bold text-white text-sm">Sales Team</div>
+            <div class="text-[10px] text-slate-400">Closing Buyer</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS (4 STEPS) -->
+  <section id="how-it-works" class="py-20 lg:py-28 bg-[#F8FAFC]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#0F172A] tracking-tight mb-4">
+          How It Works in <span class="text-brand-blue">4 Steps</span>
+        </h2>
+        <p class="text-base sm:text-lg text-slate-600">
+          From first click to calendar appointment confirmation.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Step 1 -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-saas-card">
+          <span class="text-xs font-mono font-bold text-brand-blue bg-blue-50 px-2 py-1 rounded">STEP 01</span>
+          <h3 class="text-xl font-heading font-bold text-slate-900 mt-4 mb-2">Capture</h3>
+          <p class="text-xs text-slate-500 mb-4">Connect leads automatically from:</p>
+          <ul class="text-xs text-slate-700 space-y-1.5 list-disc pl-4">
+            <li>Meta Ads</li>
+            <li>Instagram</li>
+            <li>Google Ads</li>
+            <li>Website</li>
+            <li>Webhooks</li>
+          </ul>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-saas-card">
+          <span class="text-xs font-mono font-bold text-brand-blue bg-blue-50 px-2 py-1 rounded">STEP 02</span>
+          <h3 class="text-xl font-heading font-bold text-slate-900 mt-4 mb-2">Understand</h3>
+          <p class="text-xs text-slate-500 mb-4">Upload property assets:</p>
+          <ul class="text-xs text-slate-700 space-y-1.5 list-disc pl-4">
+            <li>Property brochures</li>
+            <li>Price lists & payment plans</li>
+            <li>Floor plans & configurations</li>
+            <li>Amenities & approvals</li>
+            <li>FAQs & location information</li>
+          </ul>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-saas-card">
+          <span class="text-xs font-mono font-bold text-brand-blue bg-blue-50 px-2 py-1 rounded">STEP 03</span>
+          <h3 class="text-xl font-heading font-bold text-slate-900 mt-4 mb-2">Qualify</h3>
+          <p class="text-xs text-slate-500 mb-4">AI asks intelligent screening questions:</p>
+          <ul class="text-xs text-slate-700 space-y-1.5 list-disc pl-4">
+            <li>Budget bracket</li>
+            <li>Property type & unit</li>
+            <li>Preferred location</li>
+            <li>Buying timeline</li>
+            <li>Purpose & requirements</li>
+          </ul>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-saas-card">
+          <span class="text-xs font-mono font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">STEP 04</span>
+          <h3 class="text-xl font-heading font-bold text-slate-900 mt-4 mb-2">Book</h3>
+          <p class="text-xs text-slate-500 mb-4">Checks calendar and books automatically:</p>
+          <div class="p-3 bg-emerald-50 text-emerald-800 rounded-lg text-xs font-bold text-center">
+            Lead → Qualified → Appointment Booked ✓
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRODUCT FEATURES -->
+  <section id="features" class="py-20 lg:py-28 bg-[#071A33] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white tracking-tight mb-4">
+          Engineered for Real Estate Velocity
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base">
+          10 purpose-built capabilities for builders, brokers, and agencies.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-cyan/40 transition-all">
+          <div class="text-2xl mb-3">🤖</div>
+          <h3 class="text-lg font-heading font-bold text-white mb-1">24/7 AI Agent</h3>
+          <p class="text-xs text-slate-300">Instantly respond to prospects at any time, eliminating lead leakage.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-cyan/40 transition-all">
+          <div class="text-2xl mb-3">💬</div>
+          <h3 class="text-lg font-heading font-bold text-white mb-1">WhatsApp Automation</h3>
+          <p class="text-xs text-slate-300">Communicate with leads through WhatsApp where buyers actively respond.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-cyan/40 transition-all">
+          <div class="text-2xl mb-3">📚</div>
+          <h3 class="text-lg font-heading font-bold text-white mb-1">Property Knowledge AI</h3>
+          <p class="text-xs text-slate-300">Answer questions accurately using your actual brochures and property data.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-cyan/40 transition-all">
+          <div class="text-2xl mb-3">🎯</div>
+          <h3 class="text-lg font-heading font-bold text-white mb-1">Smart Lead Qualification</h3>
+          <p class="text-xs text-slate-300">Identify serious buyers automatically based on validated budget and timeline.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-cyan/40 transition-all">
+          <div class="text-2xl mb-3">🔄</div>
+          <h3 class="text-lg font-heading font-bold text-white mb-1">Automated Follow-Up</h3>
+          <p class="text-xs text-slate-300">Keep conversations alive across 3, 7, and 14 days without manual chasing.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-cyan/40 transition-all">
+          <div class="text-2xl mb-3">📅</div>
+          <h3 class="text-lg font-heading font-bold text-white mb-1">Site Visit Booking</h3>
+          <p class="text-xs text-slate-300">Connect Google Calendar or Calendly and automatically schedule appointments.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-cyan/40 transition-all">
+          <div class="text-2xl mb-3">🏢</div>
+          <h3 class="text-lg font-heading font-bold text-white mb-1">Multi-Property Support</h3>
+          <p class="text-xs text-slate-300">Manage multiple projects, phases, and property portfolios from one dashboard.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-cyan/40 transition-all">
+          <div class="text-2xl mb-3">🧠</div>
+          <h3 class="text-lg font-heading font-bold text-white mb-1">Lead Intelligence</h3>
+          <p class="text-xs text-slate-300">See lead source, requirements, budget, interest level, and chat transcripts.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-cyan/40 transition-all">
+          <div class="text-2xl mb-3">🔔</div>
+          <h3 class="text-lg font-heading font-bold text-white mb-1">Sales Notifications</h3>
+          <p class="text-xs text-slate-300">Notify your team on WhatsApp when a high-intent, hot buyer is detected.</p>
+        </div>
+
+      </div>
+
+      <!-- 10th Feature: Analytics Full Bar -->
+      <div class="mt-6 p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center space-x-2">
+            <span class="text-2xl">📊</span>
+            <h3 class="text-lg font-heading font-bold text-white">Full-Funnel Real Estate Analytics</h3>
+          </div>
+          <p class="text-xs text-slate-300 mt-1">Track Total Leads, Qualified Leads, Speed-to-Lead Response Time, Site Visits, and Conversion Rate.</p>
+        </div>
+        <button onclick="openModal('demo-modal')" class="px-5 py-2.5 rounded-xl bg-brand-cyan text-[#071A33] text-xs font-bold shrink-0 hover:bg-cyan-300 transition-colors">
+          View Demo Analytics
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section id="use-cases" class="py-20 lg:py-28 bg-[#F8FAFC]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#0F172A] tracking-tight mb-4">
+          Real Estate Use Cases
+        </h2>
+        <p class="text-base text-slate-600">
+          Tailored workflows for every vertical of property marketing.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+          <div class="text-2xl mb-2">🏗️</div>
+          <h4 class="font-heading font-bold text-slate-900 mb-1">Builders</h4>
+          <p class="text-xs text-slate-600">Automate inquiries for new residential projects and high-rise launches.</p>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+          <div class="text-2xl mb-2">🤝</div>
+          <h4 class="font-heading font-bold text-slate-900 mb-1">Real Estate Brokers</h4>
+          <p class="text-xs text-slate-600">Handle multiple property inquiries without increasing calling staff.</p>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+          <div class="text-2xl mb-2">⭐</div>
+          <h4 class="font-heading font-bold text-slate-900 mb-1">Channel Partners</h4>
+          <p class="text-xs text-slate-600">Qualify leads before passing verified prospects to developer sales teams.</p>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+          <div class="text-2xl mb-2">🌆</div>
+          <h4 class="font-heading font-bold text-slate-900 mb-1">Property Developers</h4>
+          <p class="text-xs text-slate-600">Manage high-volume campaigns across multiple multi-city projects.</p>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+          <div class="text-2xl mb-2">💎</div>
+          <h4 class="font-heading font-bold text-slate-900 mb-1">Luxury Real Estate</h4>
+          <p class="text-xs text-slate-600">Provide instant, white-glove concierge experiences for premium buyers.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LIVE AI DEMO (INTERACTIVE SIMULATOR) -->
+  <section id="live-demo" class="py-20 lg:py-28 bg-[#071A33] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-brand-cyan/20 border border-brand-cyan/30 text-cyan-300 text-xs font-semibold mb-4">
+          Live WhatsApp Interactive Simulator
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white tracking-tight mb-4">
+          See AD Craft handle a lead.
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base">
+          Click the options below to experience the real-time buyer qualification and automated site visit scheduling.
+        </p>
+      </div>
+
+      <!-- Simulated WhatsApp UI -->
+      <div class="max-w-md mx-auto rounded-3xl bg-[#0F243E] border-4 border-slate-700/60 shadow-2xl overflow-hidden flex flex-col h-[600px] text-slate-900">
+        
+        <!-- Header -->
+        <div class="bg-[#075E54] text-white px-4 py-3 flex items-center justify-between shrink-0">
+          <div class="flex items-center space-x-3">
+            <div class="w-9 h-9 rounded-full bg-emerald-700 flex items-center justify-center font-bold text-sm">
+              🏢
+            </div>
+            <div>
+              <div class="text-sm font-bold flex items-center space-x-1">
+                <span>Skyline Heights Sales AI</span>
+              </div>
+              <div class="text-[10px] text-emerald-100">online • AD Craft Agent</div>
+            </div>
+          </div>
+          <button onclick="resetWhatsAppDemo()" class="text-xs bg-white/10 px-2 py-1 rounded text-white hover:bg-white/20">
+            Restart
+          </button>
+        </div>
+
+        <!-- Chat Area -->
+        <div id="wa-chat-body" class="flex-1 overflow-y-auto p-4 space-y-3 text-xs bg-[#EFEAE2]">
+          
+          <!-- Msg 1 -->
+          <div class="flex flex-col items-end">
+            <div class="bg-[#D9FDD3] p-2.5 rounded-lg max-w-[85%] shadow-sm">
+              Hi, I saw your 3 BHK apartment ad. What's the price?
+              <div class="text-[9px] text-slate-400 text-right mt-1">12:01 PM ✓✓</div>
+            </div>
+          </div>
+
+          <!-- Msg 2 -->
+          <div class="flex flex-col items-start">
+            <div class="bg-white p-2.5 rounded-lg max-w-[85%] shadow-sm">
+              Hi! 👋 The 3 BHK starts from ₹62 Lakhs. Would you like me to share the floor plan and available units?
+              <div class="text-[9px] text-slate-400 text-right mt-1">12:01 PM</div>
+            </div>
+          </div>
+
+          <!-- Interactive Step 1 -->
+          <div id="wa-step-1" class="p-2.5 bg-white rounded-xl shadow-sm border border-slate-200 space-y-2">
+            <div class="text-[11px] font-bold text-slate-700">Buyer response:</div>
+            <button onclick="triggerWAStep(2)" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-semibold">
+              "Yes"
+            </button>
+          </div>
+
+          <!-- Step 2 hidden -->
+          <div id="wa-step-2-content" class="hidden space-y-3">
+            <div class="flex flex-col items-end">
+              <div class="bg-[#D9FDD3] p-2.5 rounded-lg max-w-[85%] shadow-sm">
+                Yes
+                <div class="text-[9px] text-slate-400 text-right mt-1">12:02 PM ✓✓</div>
+              </div>
+            </div>
+            <div class="flex flex-col items-start">
+              <div class="bg-white p-2.5 rounded-lg max-w-[85%] shadow-sm">
+                Absolutely. Are you looking for this as an investment or for personal use?
+                <div class="text-[9px] text-slate-400 text-right mt-1">12:02 PM</div>
+              </div>
+            </div>
+            <div id="wa-step-2-prompt" class="p-2.5 bg-white rounded-xl shadow-sm border border-slate-200 space-y-2">
+              <div class="text-[11px] font-bold text-slate-700">Select intent:</div>
+              <button onclick="triggerWAStep(3)" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-semibold">
+                "Personal use."
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3 hidden -->
+          <div id="wa-step-3-content" class="hidden space-y-3">
+            <div class="flex flex-col items-end">
+              <div class="bg-[#D9FDD3] p-2.5 rounded-lg max-w-[85%] shadow-sm">
+                Personal use.
+                <div class="text-[9px] text-slate-400 text-right mt-1">12:03 PM ✓✓</div>
+              </div>
+            </div>
+            <div class="flex flex-col items-start">
+              <div class="bg-white p-2.5 rounded-lg max-w-[85%] shadow-sm">
+                Great. What's your preferred budget?
+                <div class="text-[9px] text-slate-400 text-right mt-1">12:03 PM</div>
+              </div>
+            </div>
+            <div id="wa-step-3-prompt" class="p-2.5 bg-white rounded-xl shadow-sm border border-slate-200 space-y-2">
+              <div class="text-[11px] font-bold text-slate-700">Select budget:</div>
+              <button onclick="triggerWAStep(4)" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-semibold">
+                "Around ₹65L."
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 4: Slot picking -->
+          <div id="wa-step-4-content" class="hidden space-y-3">
+            <div class="flex flex-col items-end">
+              <div class="bg-[#D9FDD3] p-2.5 rounded-lg max-w-[85%] shadow-sm">
+                Around ₹65L.
+                <div class="text-[9px] text-slate-400 text-right mt-1">12:04 PM ✓✓</div>
+              </div>
+            </div>
+            <div class="flex flex-col items-start">
+              <div class="bg-white p-2.5 rounded-lg max-w-[85%] shadow-sm">
+                Perfect. We have a suitable unit available. Would you like to schedule a site visit?
+                <div class="text-[9px] text-slate-400 text-right mt-1">12:04 PM</div>
+              </div>
+            </div>
+
+            <!-- 3 Requested Buttons -->
+            <div id="wa-slot-buttons" class="p-2.5 bg-white rounded-xl shadow-sm border border-slate-200 space-y-2">
+              <div class="text-[11px] font-bold text-slate-700">Select a visit time:</div>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-1.5">
+                <button onclick="confirmWASlot('Today 5:30 PM')" class="p-2 bg-blue-50 hover:bg-blue-600 hover:text-white font-semibold text-[11px] rounded border border-blue-200">Today 5:30 PM</button>
+                <button onclick="confirmWASlot('Tomorrow 11:30 AM')" class="p-2 bg-blue-50 hover:bg-blue-600 hover:text-white font-semibold text-[11px] rounded border border-blue-200">Tomorrow 11:30 AM</button>
+                <button onclick="confirmWASlot('Saturday 3:00 PM')" class="p-2 bg-blue-50 hover:bg-blue-600 hover:text-white font-semibold text-[11px] rounded border border-blue-200">Saturday 3:00 PM</button>
+              </div>
+            </div>
+
+            <!-- Confirmation Card -->
+            <div id="wa-confirmed-card" class="hidden p-4 rounded-xl bg-emerald-600 text-white shadow-lg space-y-1">
+              <div class="font-bold text-sm">✓ Site Visit Confirmed</div>
+              <div id="wa-confirmed-slot" class="text-xs text-emerald-100 font-medium">Saturday 11:30 AM</div>
+              <div class="text-[10px] text-emerald-200 pt-1">Google Calendar invite synced & sales team alerted.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Input -->
+        <div class="p-3 bg-[#F0F2F5] text-xs text-slate-500 border-t border-slate-300">
+          Click an interactive button above to simulate conversation...
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTEGRATIONS -->
+  <section class="py-20 lg:py-28 bg-[#F8FAFC]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#0F172A] tracking-tight mb-4">
+          Connect the tools you already use.
+        </h2>
+        <p class="text-base sm:text-lg text-slate-600">
+          AD Craft sits between your lead sources and your sales team.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-4 max-w-5xl mx-auto">
+        <div class="p-4 bg-white rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-800 shadow-sm">📱 WhatsApp</div>
+        <div class="p-4 bg-white rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-800 shadow-sm">🌐 Meta Ads</div>
+        <div class="p-4 bg-white rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-800 shadow-sm">📸 Instagram</div>
+        <div class="p-4 bg-white rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-800 shadow-sm">🔍 Google Ads</div>
+        <div class="p-4 bg-white rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-800 shadow-sm">📅 Google Calendar</div>
+        <div class="p-4 bg-white rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-800 shadow-sm">⏰ Calendly</div>
+        <div class="p-4 bg-white rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-800 shadow-sm">🔗 Webhooks</div>
+        <div class="p-4 bg-white rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-800 shadow-sm">🧠 OpenAI</div>
+        <div class="p-4 bg-white rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-800 shadow-sm">⚡ DeepSeek</div>
+        <div class="p-4 bg-white rounded-xl border border-slate-200 text-center font-bold text-xs text-slate-800 shadow-sm">⚙️ n8n</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ROI CALCULATOR -->
+  <section id="roi-calculator" class="py-20 lg:py-28 bg-[#071A33] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white tracking-tight mb-4">
+          What are missed leads costing you?
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base">
+          Calculate your potential lost revenue and how much AD Craft can recover.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto rounded-3xl bg-white/5 border border-white/10 p-6 sm:p-10 backdrop-blur-xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          
+          <!-- Inputs -->
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span>Monthly Leads</span>
+                <span id="roi-leads-val" class="font-bold text-brand-cyan">350 leads</span>
+              </div>
+              <input type="range" id="roi-leads" min="50" max="2000" step="25" value="350" oninput="updateROI()" class="w-full h-2 bg-white/20 rounded accent-brand-cyan">
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span>Average Property Value</span>
+                <span id="roi-val-val" class="font-bold text-brand-cyan">₹75 Lakhs</span>
+              </div>
+              <input type="range" id="roi-price" min="30" max="300" step="5" value="75" oninput="updateROI()" class="w-full h-2 bg-white/20 rounded accent-brand-cyan">
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span>Lead-to-Sale Conversion (%)</span>
+                <span id="roi-conv-val" class="font-bold text-brand-cyan">1.5%</span>
+              </div>
+              <input type="range" id="roi-conv" min="0.5" max="5.0" step="0.1" value="1.5" oninput="updateROI()" class="w-full h-2 bg-white/20 rounded accent-brand-cyan">
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span>Average Commission (%)</span>
+                <span id="roi-comm-val" class="font-bold text-brand-cyan">2.0%</span>
+              </div>
+              <input type="range" id="roi-comm" min="1.0" max="4.0" step="0.25" value="2.0" oninput="updateROI()" class="w-full h-2 bg-white/20 rounded accent-brand-cyan">
+            </div>
+          </div>
+
+          <!-- Calculated Outputs -->
+          <div class="space-y-4">
+            
+            <div class="p-5 rounded-2xl bg-red-950/40 border border-red-500/40">
+              <div class="text-xs text-red-400 font-bold uppercase tracking-wider">Potential Revenue Lost</div>
+              <div id="roi-lost-res" class="text-3xl font-heading font-extrabold text-red-300 mt-1">₹4.7 Lakhs / mo</div>
+              <div class="text-[11px] text-slate-400 mt-1">Without sub-5 minute response</div>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-emerald-950/40 border border-emerald-500/40">
+              <div class="text-xs text-emerald-400 font-bold uppercase tracking-wider">Potential Revenue Recovered</div>
+              <div id="roi-recovered-res" class="text-3xl font-heading font-extrabold text-emerald-400 mt-1">₹2.1 Lakhs / mo</div>
+              <div class="text-[11px] text-slate-400 mt-1">Via 24/7 autonomous WhatsApp qualification</div>
+            </div>
+
+            <button onclick="openModal('demo-modal')" class="w-full py-3 bg-brand-cyan text-[#071A33] font-bold text-xs rounded-xl hover:bg-cyan-300 transition-colors">
+              Calculate Your ROI
+            </button>
+            <div class="text-[10px] text-center text-slate-400">Estimates based on industry real estate benchmarks.</div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DASHBOARD PREVIEW -->
+  <section id="dashboard" class="py-20 lg:py-28 bg-[#F8FAFC]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#0F172A] tracking-tight mb-4">
+          Real Estate Command Dashboard
+        </h2>
+        <p class="text-base text-slate-600">
+          Live visibility into lead scoring, conversion funnels, and scheduled appointments.
+        </p>
+      </div>
+
+      <!-- Dashboard Container -->
+      <div class="rounded-3xl bg-[#071A33] border border-slate-700 shadow-2xl p-6 sm:p-8 text-white max-w-5xl mx-auto">
+        
+        <!-- Overview Stats -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+          <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+            <div class="text-xs text-slate-400">Total Leads</div>
+            <div class="text-2xl font-bold font-heading text-white mt-1">1,284</div>
+            <div class="text-[10px] text-emerald-400 mt-0.5">+24% vs last month</div>
+          </div>
+          <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+            <div class="text-xs text-slate-400">Qualified Leads</div>
+            <div class="text-2xl font-bold font-heading text-brand-cyan mt-1">426</div>
+            <div class="text-[10px] text-slate-400 mt-0.5">33.2% qualified</div>
+          </div>
+          <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+            <div class="text-xs text-slate-400">Site Visits</div>
+            <div class="text-2xl font-bold font-heading text-emerald-400 mt-1">183</div>
+            <div class="text-[10px] text-emerald-400 mt-0.5">Google Calendar synced</div>
+          </div>
+          <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+            <div class="text-xs text-slate-400">Conversion Rate</div>
+            <div class="text-2xl font-bold font-heading text-purple-300 mt-1">14.2%</div>
+            <div class="text-[10px] text-slate-400 mt-0.5">2.8x industry average</div>
+          </div>
+        </div>
+
+        <!-- Chart: Leads -> Qualified -> Site Visits -->
+        <div class="p-5 rounded-2xl bg-[#040F1F] border border-white/10 mb-8">
+          <div class="text-xs font-bold text-slate-300 mb-3">Funnel Progression: Leads → Qualified → Site Visits</div>
+          
+          <div class="space-y-2 text-xs">
+            <div>
+              <div class="flex justify-between text-slate-400 mb-1">
+                <span>Total Inbound Leads</span>
+                <span>1,284 (100%)</span>
+              </div>
+              <div class="w-full h-2.5 bg-white/10 rounded-full overflow-hidden">
+                <div class="w-full h-full bg-blue-600 rounded-full"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-slate-400 mb-1">
+                <span>Qualified Leads</span>
+                <span>426 (33.2%)</span>
+              </div>
+              <div class="w-full h-2.5 bg-white/10 rounded-full overflow-hidden">
+                <div class="w-[33%] h-full bg-brand-cyan rounded-full"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-slate-400 mb-1">
+                <span>Site Visits Booked</span>
+                <span>183 (14.2%)</span>
+              </div>
+              <div class="w-full h-2.5 bg-white/10 rounded-full overflow-hidden">
+                <div class="w-[14%] h-full bg-emerald-500 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Leads Table -->
+        <div class="p-5 rounded-2xl bg-[#040F1F] border border-white/10 overflow-x-auto">
+          <div class="text-xs font-bold text-white mb-3">Recent Leads CRM Feed</div>
+          <table class="w-full text-left text-xs min-w-[480px]">
+            <thead>
+              <tr class="border-b border-white/10 text-slate-400 text-[11px]">
+                <th class="pb-2">Lead</th>
+                <th class="pb-2">Property</th>
+                <th class="pb-2">Score</th>
+                <th class="pb-2">Status</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/5 text-slate-200">
+              <tr>
+                <td class="py-2.5 font-semibold text-white">Rahul</td>
+                <td class="py-2.5">3 BHK</td>
+                <td class="py-2.5 font-mono text-cyan-300">92/100</td>
+                <td class="py-2.5"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-orange-500/20 text-orange-400">Hot</span></td>
+              </tr>
+              <tr>
+                <td class="py-2.5 font-semibold text-white">Priya</td>
+                <td class="py-2.5">Villa</td>
+                <td class="py-2.5 font-mono text-cyan-300">84/100</td>
+                <td class="py-2.5"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400">Qualified</span></td>
+              </tr>
+              <tr>
+                <td class="py-2.5 font-semibold text-white">Aman</td>
+                <td class="py-2.5">2 BHK</td>
+                <td class="py-2.5 font-mono text-cyan-300">61/100</td>
+                <td class="py-2.5"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300">Warm</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-20 lg:py-28 bg-[#071A33] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white tracking-tight mb-4">
+          Transparent PropTech Pricing
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base">
+          Choose the plan tailored to your property portfolio.
+        </p>
+      </div>
+
+      <!-- 3 Plans -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+        
+        <!-- Starter -->
+        <div class="rounded-3xl p-8 bg-white/5 border border-white/10 flex flex-col justify-between">
+          <div>
+            <h3 class="text-2xl font-heading font-bold text-white mb-1">Starter</h3>
+            <p class="text-xs text-slate-400 mb-4">For individual brokers.</p>
+            <div class="text-4xl font-heading font-extrabold text-white mb-6">
+              ₹19,999<span class="text-xs text-slate-400 font-normal">/month</span>
+            </div>
+            <ul class="text-xs text-slate-300 space-y-2.5 mb-8">
+              <li>✓ AI Lead Agent</li>
+              <li>✓ WhatsApp automation</li>
+              <li>✓ 1 property/project</li>
+              <li>✓ Lead qualification</li>
+              <li>✓ Calendar booking</li>
+              <li>✓ Basic analytics</li>
+            </ul>
+          </div>
+          <button onclick="openModal('beta-modal')" class="w-full py-3 bg-white/10 hover:bg-white/20 text-white font-bold text-xs rounded-xl">
+            Start Beta
+          </button>
+        </div>
+
+        <!-- Growth -->
+        <div class="rounded-3xl p-8 bg-gradient-to-b from-[#0B2345] to-[#071A33] border-2 border-brand-cyan shadow-2xl relative flex flex-col justify-between">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3.5 py-1 rounded-full bg-brand-cyan text-[#071A33] font-extrabold text-[10px] uppercase tracking-wider">
+            MOST POPULAR
+          </div>
+          <div>
+            <h3 class="text-2xl font-heading font-bold text-white mb-1">Growth</h3>
+            <p class="text-xs text-slate-400 mb-4">For growing agencies and builders.</p>
+            <div class="text-4xl font-heading font-extrabold text-white mb-6">
+              ₹24,999<span class="text-xs text-slate-400 font-normal">/month</span>
+            </div>
+            <ul class="text-xs text-slate-300 space-y-2.5 mb-8">
+              <li>✓ Everything in Starter</li>
+              <li>✓ Multiple properties</li>
+              <li>✓ Advanced qualification</li>
+              <li>✓ Automated follow-ups</li>
+              <li>✓ Lead analytics</li>
+              <li>✓ Multiple calendars</li>
+              <li>✓ Priority support</li>
+            </ul>
+          </div>
+          <button onclick="openModal('beta-modal')" class="w-full py-3 bg-brand-cyan hover:bg-cyan-300 text-[#071A33] font-bold text-xs rounded-xl">
+            Start Beta
+          </button>
+        </div>
+
+        <!-- Global -->
+        <div class="rounded-3xl p-8 bg-white/5 border border-white/10 flex flex-col justify-between">
+          <div>
+            <h3 class="text-2xl font-heading font-bold text-white mb-1">Global</h3>
+            <p class="text-xs text-slate-400 mb-4">For international real-estate businesses.</p>
+            <div class="text-4xl font-heading font-extrabold text-white mb-6">
+              $999<span class="text-xs text-slate-400 font-normal">/month</span>
+            </div>
+            <ul class="text-xs text-slate-300 space-y-2.5 mb-8">
+              <li>✓ Multi-property AI</li>
+              <li>✓ Advanced automation</li>
+              <li>✓ International lead workflows</li>
+              <li>✓ Advanced analytics</li>
+              <li>✓ Priority onboarding</li>
+              <li>✓ Custom integrations</li>
+            </ul>
+          </div>
+          <button onclick="openModal('demo-modal')" class="w-full py-3 bg-white/10 hover:bg-white/20 text-white font-bold text-xs rounded-xl">
+            Book a Demo
+          </button>
+        </div>
+
+      </div>
+
+      <div class="text-center text-xs text-slate-400">
+        Plans can be customized based on lead volume, properties and integrations.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF (TESTIMONIALS) -->
+  <section class="py-20 lg:py-28 bg-[#F8FAFC]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#0F172A] tracking-tight mb-4">
+          Built for teams that can't afford to lose leads.
+        </h2>
+        <p class="text-sm text-slate-500">
+          * Representative benchmark outcomes from pilot real-estate marketing campaigns.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <p class="text-xs sm:text-sm text-slate-700 italic mb-6 leading-relaxed">
+            "Before AD Craft, our sales reps took up to 3 hours to respond to Meta ad leads. With sub-5 second responses on WhatsApp, our site visit booking rate jumped 190% in 30 days."
+          </p>
+          <div class="pt-4 border-t border-slate-100 flex justify-between items-end">
+            <div>
+              <div class="text-xs font-bold text-slate-900">VP of Sales & Marketing</div>
+              <div class="text-[11px] text-slate-500">Leading Metro Residential Developer</div>
+            </div>
+            <span class="text-xs font-mono font-bold text-brand-blue">+190% Visits</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <p class="text-xs sm:text-sm text-slate-700 italic mb-6 leading-relaxed">
+            "40% of our luxury leads inquire between 9 PM and midnight. AD Craft qualifies their budget and locks in weekend walkthroughs while our staff is sleeping."
+          </p>
+          <div class="pt-4 border-t border-slate-100 flex justify-between items-end">
+            <div>
+              <div class="text-xs font-bold text-slate-900">Managing Director</div>
+              <div class="text-[11px] text-slate-500">Premier Channel Partner Network</div>
+            </div>
+            <span class="text-xs font-mono font-bold text-brand-blue">4.2s Latency</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <p class="text-xs sm:text-sm text-slate-700 italic mb-6 leading-relaxed">
+            "Eliminated the 4 hours our brokers used to burn every day answering basic brochure and carpet area questions. Now they strictly meet qualified buyers on-site."
+          </p>
+          <div class="pt-4 border-t border-slate-100 flex justify-between items-end">
+            <div>
+              <div class="text-xs font-bold text-slate-900">Principal Partner</div>
+              <div class="text-[11px] text-slate-500">Boutique Real Estate Advisory</div>
+            </div>
+            <span class="text-xs font-mono font-bold text-brand-blue">₹4.2 Cr Pipeline</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section id="faq" class="py-20 lg:py-28 bg-[#071A33] text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold mb-3">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-slate-300 text-xs sm:text-sm">
+          Everything you need to know about AD Craft.
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        
+        <details class="bg-white/5 border border-white/10 rounded-xl p-4 cursor-pointer">
+          <summary class="font-bold text-sm text-white">What is AD Craft?</summary>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            AD Craft is an AI-powered real-estate lead automation platform that responds to, qualifies and follows up with prospects and helps schedule site visits.
+          </p>
+        </details>
+
+        <details class="bg-white/5 border border-white/10 rounded-xl p-4 cursor-pointer">
+          <summary class="font-bold text-sm text-white">Does it work with WhatsApp?</summary>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            Yes. The platform is designed to integrate directly with WhatsApp-based lead conversations via the official Meta Cloud API.
+          </p>
+        </details>
+
+        <details class="bg-white/5 border border-white/10 rounded-xl p-4 cursor-pointer">
+          <summary class="font-bold text-sm text-white">Can the AI answer property-specific questions?</summary>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            Yes. Property brochures, FAQs, pricing information and other approved project information can be used as the AI's knowledge source.
+          </p>
+        </details>
+
+        <details class="bg-white/5 border border-white/10 rounded-xl p-4 cursor-pointer">
+          <summary class="font-bold text-sm text-white">Can it book site visits?</summary>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            Yes. Calendar integrations (Google Calendar / Calendly) can be used to schedule appointments and dispatch Google Maps pins.
+          </p>
+        </details>
+
+        <details class="bg-white/5 border border-white/10 rounded-xl p-4 cursor-pointer">
+          <summary class="font-bold text-sm text-white">Do I need technical knowledge?</summary>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            No. The target experience is self-serve onboarding. Connect your WhatsApp, upload your PDF brochures, and start in 15 minutes.
+          </p>
+        </details>
+
+        <details class="bg-white/5 border border-white/10 rounded-xl p-4 cursor-pointer">
+          <summary class="font-bold text-sm text-white">Can I use it for multiple properties?</summary>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            Yes, depending on the subscription plan and configuration (Growth supports up to 5 properties, Global supports unlimited).
+          </p>
+        </details>
+
+        <details class="bg-white/5 border border-white/10 rounded-xl p-4 cursor-pointer">
+          <summary class="font-bold text-sm text-white">Does AD Craft replace my sales team?</summary>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            No. It handles repetitive lead-response and qualification work so the sales team can focus on high-intent prospects and closing.
+          </p>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 lg:py-28 bg-[#040F1F] text-white border-t border-white/10">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white mb-4">
+        Stop paying for leads you never follow up with.
+      </h2>
+      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-8">
+        Let AI respond instantly, qualify every prospect, and turn conversations into site visits.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+        <button onclick="openModal('beta-modal')" class="w-full sm:w-auto px-8 py-3.5 bg-brand-cyan text-[#071A33] font-bold rounded-xl shadow-lg hover:bg-cyan-300 transition-all">
+          Start Free Beta
+        </button>
+        <button onclick="openModal('demo-modal')" class="w-full sm:w-auto px-8 py-3.5 bg-white/10 hover:bg-white/15 text-white font-semibold rounded-xl border border-white/20 transition-all">
+          Book a Demo
+        </button>
+      </div>
+
+      <div class="text-xs text-slate-400">
+        Setup in minutes. No complex training required.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#071A33] text-slate-400 border-t border-white/10 py-12 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+        
+        <div>
+          <div class="text-white font-bold text-sm mb-3">AD Craft</div>
+          <p class="text-slate-400 text-xs">AI Lead Automation for Real Estate</p>
+          <div class="text-[11px] text-slate-500 mt-2">"Your ads generate leads. AD Craft makes sure you don't lose them."</div>
+        </div>
+
+        <div>
+          <div class="text-white font-semibold mb-2">Navigation</div>
+          <ul class="space-y-1.5">
+            <li><a href="#product" class="hover:text-white">Product</a></li>
+            <li><a href="#features" class="hover:text-white">Features</a></li>
+            <li><a href="#pricing" class="hover:text-white">Pricing</a></li>
+            <li><a href="#how-it-works" class="hover:text-white">How It Works</a></li>
+            <li><a href="#use-cases" class="hover:text-white">Use Cases</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-white font-semibold mb-2">Company</div>
+          <ul class="space-y-1.5">
+            <li><a href="#faq" class="hover:text-white">FAQ</a></li>
+            <li><button onclick="openModal('demo-modal')" class="hover:text-white">Contact</button></li>
+            <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-white font-semibold mb-2">Social</div>
+          <ul class="space-y-1.5">
+            <li><a href="https://linkedin.com" target="_blank" class="hover:text-white">LinkedIn</a></li>
+            <li><a href="https://instagram.com" target="_blank" class="hover:text-white">Instagram</a></li>
+            <li><a href="https://x.com" target="_blank" class="hover:text-white">X</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-[11px]">
+        <div>© 2026 AD Craft. All rights reserved.</div>
+        <div class="mt-2 sm:mt-0">Positioning: AI Lead Loss Protection for Real Estate</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODALS -->
+  
+  <!-- Demo Modal -->
+  <div id="demo-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative text-slate-900 max-h-[90vh] overflow-y-auto">
+      <button onclick="closeModal('demo-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 text-xl font-bold">×</button>
+      
+      <div id="demo-form-view">
+        <h3 class="text-xl font-heading font-bold mb-1">Book a Personalized Demo</h3>
+        <p class="text-xs text-slate-500 mb-4">See how AD Craft automates site visit bookings for your properties.</p>
+        
+        <form onsubmit="handleDemoSubmit(event)" class="space-y-3 text-xs">
+          <div>
+            <label class="block font-semibold mb-1">Name *</label>
+            <input type="text" required placeholder="Vikram Singhania" class="w-full px-3 py-2 border rounded-lg">
+          </div>
+          <div>
+            <label class="block font-semibold mb-1">Business / Company *</label>
+            <input type="text" required placeholder="Prestige Prime Realty" class="w-full px-3 py-2 border rounded-lg">
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="block font-semibold mb-1">Email *</label>
+              <input type="email" required placeholder="vikram@realty.com" class="w-full px-3 py-2 border rounded-lg">
+            </div>
+            <div>
+              <label class="block font-semibold mb-1">WhatsApp Number *</label>
+              <input type="tel" required placeholder="+91 98765 43210" class="w-full px-3 py-2 border rounded-lg">
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="block font-semibold mb-1">Monthly Leads</label>
+              <select class="w-full px-3 py-2 border rounded-lg bg-white">
+                <option>Under 100</option>
+                <option>100 - 300</option>
+                <option>300 - 1,000</option>
+                <option>1,000+</option>
+              </select>
+            </div>
+            <div>
+              <label class="block font-semibold mb-1">Properties Count</label>
+              <select class="w-full px-3 py-2 border rounded-lg bg-white">
+                <option>1 Project</option>
+                <option>2 - 5 Projects</option>
+                <option>6+ Projects</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="block font-semibold mb-1">Current Lead Source</label>
+            <select class="w-full px-3 py-2 border rounded-lg bg-white">
+              <option>Meta / Instagram Ads</option>
+              <option>Google Ads</option>
+              <option>Portals (99acres/Housing)</option>
+              <option>Website / Multiple</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-semibold mb-1">Message (Optional)</label>
+            <textarea rows="2" placeholder="Tell us about your project or launch dates..." class="w-full px-3 py-2 border rounded-lg"></textarea>
+          </div>
+          <button type="submit" class="w-full py-3 bg-brand-blue hover:bg-blue-700 text-white font-bold rounded-xl text-xs transition-colors">
+            Confirm Demo Booking
+          </button>
+        </form>
+      </div>
+
+      <div id="demo-success-view" class="hidden text-center py-8 space-y-4">
+        <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-xl font-bold">✓</div>
+        <h4 class="text-lg font-bold text-slate-900">Demo Scheduled!</h4>
+        <p class="text-xs text-slate-600">A calendar invite and WhatsApp confirmation has been dispatched to your number.</p>
+        <button onclick="closeModal('demo-modal')" class="px-5 py-2 bg-brand-blue text-white rounded-lg text-xs font-bold">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Beta Modal -->
+  <div id="beta-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative text-slate-900">
+      <button onclick="closeModal('beta-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 text-xl font-bold">×</button>
+      <h3 class="text-xl font-heading font-bold mb-1">Start Free 14-Day Beta</h3>
+      <p class="text-xs text-slate-500 mb-4">No credit card required. Test WhatsApp qualification with your brochure.</p>
+      
+      <form onsubmit="handleBetaSubmit(event)" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-semibold mb-1">Project Name</label>
+          <input type="text" required placeholder="Skyline Grand or Signature Towers" class="w-full px-3 py-2 border rounded-lg">
+        </div>
+        <div>
+          <label class="block font-semibold mb-1">Work Email</label>
+          <input type="email" required placeholder="name@realty.com" class="w-full px-3 py-2 border rounded-lg">
+        </div>
+        <div>
+          <label class="block font-semibold mb-1">WhatsApp Number for Alerts</label>
+          <input type="tel" required placeholder="+91 98450 12345" class="w-full px-3 py-2 border rounded-lg">
+        </div>
+        <button type="submit" class="w-full py-3 bg-brand-cyan hover:bg-cyan-400 text-[#071A33] font-bold rounded-xl text-xs transition-colors">
+          Activate Beta Sandbox
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div id="login-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative text-slate-900">
+      <button onclick="closeModal('login-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 text-xl font-bold">×</button>
+      <h3 class="text-xl font-heading font-bold mb-1">Portal Login</h3>
+      <p class="text-xs text-slate-500 mb-4">Access your AD Craft real estate pipeline.</p>
+      
+      <div class="p-3 mb-3 bg-blue-50 border border-blue-200 rounded-xl flex items-center justify-between text-xs">
+        <div>
+          <span class="font-bold text-brand-blue block">Fast Demo Access</span>
+          <span class="text-slate-500 text-[11px]">Instant 1-click preview</span>
+        </div>
+        <button onclick="simulateDemoLogin()" class="px-3 py-1.5 bg-brand-blue text-white font-bold rounded-lg text-xs">
+          Enter Demo
+        </button>
+      </div>
+
+      <form onsubmit="event.preventDefault(); simulateDemoLogin();" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-semibold mb-1">Business Email</label>
+          <input type="email" value="agent@developer.com" class="w-full px-3 py-2 border rounded-lg">
+        </div>
+        <div>
+          <label class="block font-semibold mb-1">Password</label>
+          <input type="password" value="••••••••••••" class="w-full px-3 py-2 border rounded-lg">
+        </div>
+        <button type="submit" class="w-full py-2.5 bg-slate-900 text-white font-bold rounded-xl text-xs">
+          Sign In
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT FOR DYNAMIC DEMOS -->
+  <script>
+    // Modal Helpers
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    // WhatsApp Simulation Logic
+    function triggerWAStep(step) {
+      if (step === 2) {
+        document.getElementById('wa-step-1').classList.add('hidden');
+        document.getElementById('wa-step-2-content').classList.remove('hidden');
+      } else if (step === 3) {
+        document.getElementById('wa-step-2-prompt').classList.add('hidden');
+        document.getElementById('wa-step-3-content').classList.remove('hidden');
+      } else if (step === 4) {
+        document.getElementById('wa-step-3-prompt').classList.add('hidden');
+        document.getElementById('wa-step-4-content').classList.remove('hidden');
+      }
+      const chatBody = document.getElementById('wa-chat-body');
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function confirmWASlot(slot) {
+      document.getElementById('wa-slot-buttons').classList.add('hidden');
+      const confirmed = document.getElementById('wa-confirmed-card');
+      document.getElementById('wa-confirmed-slot').innerText = slot;
+      confirmed.classList.remove('hidden');
+      const chatBody = document.getElementById('wa-chat-body');
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function resetWhatsAppDemo() {
+      document.getElementById('wa-step-1').classList.remove('hidden');
+      document.getElementById('wa-step-2-content').classList.add('hidden');
+      document.getElementById('wa-step-2-prompt').classList.remove('hidden');
+      document.getElementById('wa-step-3-content').classList.add('hidden');
+      document.getElementById('wa-step-3-prompt').classList.remove('hidden');
+      document.getElementById('wa-step-4-content').classList.add('hidden');
+      document.getElementById('wa-slot-buttons').classList.remove('hidden');
+      document.getElementById('wa-confirmed-card').classList.add('hidden');
+    }
+
+    // ROI Calculator Function
+    function updateROI() {
+      const leads = parseInt(document.getElementById('roi-leads').value);
+      const priceLakhs = parseInt(document.getElementById('roi-price').value);
+      const conv = parseFloat(document.getElementById('roi-conv').value);
+      const comm = parseFloat(document.getElementById('roi-comm').value);
+
+      document.getElementById('roi-leads-val').innerText = leads + ' leads';
+      document.getElementById('roi-val-val').innerText = '₹' + priceLakhs + ' Lakhs';
+      document.getElementById('roi-conv-val').innerText = conv.toFixed(1) + '%';
+      document.getElementById('roi-comm-val').innerText = comm.toFixed(2) + '%';
+
+      // 60% lead loss without instant response
+      const lostLeads = leads * 0.60;
+      const dealValue = (priceLakhs * 100000) * (comm / 100);
+      const lostDeals = lostLeads * (conv / 100);
+      const lostRev = Math.round(lostDeals * dealValue);
+
+      // AD Craft recovers ~45% of lost leads
+      const recoveredRev = Math.round(lostRev * 0.45);
+
+      function formatINR(val) {
+        if (val >= 10000000) return '₹' + (val / 10000000).toFixed(2) + ' Cr / mo';
+        return '₹' + (val / 100000).toFixed(1) + ' Lakhs / mo';
+      }
+
+      document.getElementById('roi-lost-res').innerText = formatINR(lostRev);
+      document.getElementById('roi-recovered-res').innerText = formatINR(recoveredRev);
+    }
+
+    // Form handlers
+    function handleDemoSubmit(e) {
+      e.preventDefault();
+      document.getElementById('demo-form-view').classList.add('hidden');
+      document.getElementById('demo-success-view').classList.remove('hidden');
+    }
+
+    function handleBetaSubmit(e) {
+      e.preventDefault();
+      alert("Beta Sandbox Activated! A verification WhatsApp ping has been dispatched.");
+      closeModal('beta-modal');
+    }
+
+    function simulateDemoLogin() {
+      closeModal('login-modal');
+      const dash = document.getElementById('dashboard');
+      if (dash) dash.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
